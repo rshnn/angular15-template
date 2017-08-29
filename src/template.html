@@ -1,0 +1,40 @@
+<div class="swingweight-container">
+	
+	<div class="col">
+			<div class="row-xs-6">
+		 		where is this going to be
+				
+			</div>
+
+	</div>
+
+
+	<div class="col">
+        <div class="row-xs-6">
+
+			<ul class="req-block"
+				ng-repeat="req in $ctrl.data.requirements"
+				ui-draggable="true"
+				> 
+
+				{{req.label}} {{req.name}}
+				
+			</ul>
+
+		</div>	
+	</div>
+
+
+
+<!--     <div class="col-xs-6">
+        <ul ui-on-Drop="onDrop($event,$data,req)">
+            <li ui-draggable="true" drag="req" 
+            on-drop-success="dropSuccessHandler($event,$index,req)"
+            ng-repeat="req in data track by $index">
+                {{req}}
+            </li>
+        </ul>
+    </div> -->
+
+
+</div>

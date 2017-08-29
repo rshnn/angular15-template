@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Template Ang 1.5</title>
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        div{
+            height: 90%;
+        }
+    </style>
+</head>
+
+
+<body>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="template.bundle.js"></script>
+
+<script type="application/javascript">
+    //Setups up fake data
+
+angular.module('TemplateExample', ['Template'])
+    .run(function($rootScope, $timeout) {
+    $rootScope.data = {};
+
+    /* Simulating datafrmae object */
+    $rootScope.data.dataframe = {
+
+        requirements: 
+            {
+                nodes: {
+
+                    a: {
+                        children: [
+                            {_id: 'b'},
+                            {_id: 'e'}                            
+                        ],
+                        node: {
+                                name: 'Stakeholder Requirements',
+                                id: 'a',
+                                description: 'Satisfy all stakeholder needs.',
+                                label: '1',
+                                parent: null, 
+                                units: null,
+                                weights: {
+                                    b: 0.33,
+                                    e: 0.5
+                                }
+                            },
+                        parents: {},
+                        _id: 'a'
+
+                    },
+
+
+                    b: {
+
+                        children: [
+                            {_id: 'c'},
+                            {_id: 'd'}
+                        ],
+                        node: {
+                                name: 'Collectables Requirement',
+                                id: 'b',
+                                description: 'Maximize number of collectables.',
+                                label: '1.1',
+                                parent: 'a', 
+                                units: null,
+                                weights: {
+                                    c: 0.9,
+                                    d: 0.5
+                                }
+                            },
+
+                        parents: [{
+
+                            children: [
+                                {_id: 'b'}, {_id: 'e'}
+                            ],
+                            node: {
+                                    name: 'Stakeholder Requirements',
+                                    id: 'a',
+                                    description: 'Satisfy all stakeholder needs.',
+                                    label: '1',
+                                    parent: null, 
+                                    units: null,
+                                    weights: {
+                                        b: 0.33,
+                                        e: 0.5
+                                    }
+                                },
+                            parents: {},
+                            _id: 'a'
+
+
+                        }],
+
+                        _id: 'b'
+                        
+                    },
+
+
+
+                    c: {
+
+                        children: [],
+                        node: {
+                                name: 'Rings Requirement',
+                                id: 'c',
+                                description: 'Collect as many rings as possible.',
+                                label: '1.1.1',
+                                parent: 'b', 
+                                units: 'ring',
+                                weights: {
+                                }
+                            },
+
+                        parents: [{
+
+                            children: [
+                                {_id: 'c'},
+                                {_id: 'd'}
+                            ],
+                            node: {
+                                    name: 'Collectables Requirement',
+                                    id: 'b',
+                                    description: 'Maximize number of collectables.',
+                                    label: '1.1',
+                                    parent: null, 
+                                    units: null,
+                                    weights: {
+                                        c: 0.9,
+                                        d: 0.5
+                                    }
+                                },
+
+                            parents: [{
+
+                                children: [
+                                    {_id: 'b'}, {_id: 'e'}
+                                ],
+                                node: {
+                                        name: 'Stakeholder Requirements',
+                                        id: 'a',
+                                        description: 'Satisfy all stakeholder needs.',
+                                        label: '1',
+                                        parent: null, 
+                                        units: null,
+                                        weights: {
+                                            b: 0.33,
+                                            e: 0.5
+                                        }
+                                    },
+                                parents: {},
+                                _id: 'a'
+
+
+                            }],
+
+                            _id: 'b'
+
+                        }],
+                        _id: 'c'
+                        
+                    },
+
+
+
+                    d: {
+
+                        children: [],
+                        node: {
+                                name: 'Lives Requirement',
+                                id: 'd',
+                                description: 'Collect as many 1-UPs as possible.',
+                                label: '1.1.2',
+                                parent: 'b', 
+                                units: 'lives',
+                                weights: {
+                                }
+                            },
+
+                        parents: [{
+
+                            children: [
+                                {_id: 'c'},
+                                {_id: 'd'}
+                            ],
+                            node: {
+                                    name: 'Collectables Requirement',
+                                    id: 'b',
+                                    description: 'Maximize number of collectables.',
+                                    label: '1.1',
+                                    parent: null, 
+                                    units: null,
+                                    weights: {
+                                        c: 0.9,
+                                        d: 0.5
+                                    }
+                                },
+
+                            parents: [{
+
+                                children: [
+                                    {_id: 'b'}, {_id: 'e'}
+                                ],
+                                node: {
+                                        name: 'Stakeholder Requirements',
+                                        id: 'a',
+                                        description: 'Satisfy all stakeholder needs.',
+                                        label: '1',
+                                        parent: null, 
+                                        units: null,
+                                        weights: {
+                                            b: 0.33,
+                                            e: 0.5
+                                        }
+                                    },
+                                parents: {},
+                                _id: 'a'
+
+
+                            }],
+
+                            _id: 'b'
+
+                        }],
+                        _id: 'd'
+                        
+                    },
+
+
+                    e: {
+
+                        children: [],
+                        node: {
+                                name: 'Speed Requirement',
+                                id: 'e',
+                                description: 'Maximize number of collectables.',
+                                label: '1.2',
+                                parent: 'e', 
+                                units: 'm/s',
+                                weights: {
+                                }
+                            },
+
+                        parents: [{
+
+                            children: [
+                                {_id: 'b'}, 
+                                {_id: 'e'}                                
+                            ],
+                            node: {
+                                    name: 'Stakeholder Requirements',
+                                    id: 'a',
+                                    description: 'Satisfy all stakeholder needs.',
+                                    label: '1',
+                                    parent: null, 
+                                    units: null,
+                                    weights: {
+                                        b: 0.33,
+                                        e: 0.5
+                                    }
+                                },
+                            parents: {},
+                            _id: 'a'
+
+
+                        }],
+
+                        _id: 'e'
+                        
+                    },
+                }
+            }
+    };
+
+    /* Adds random point values */
+    $rootScope.data.points = [];
+
+    var i;
+    function addPoint(numOfPoints) {
+        for (i = 0; i < numOfPoints; i++) {
+            $rootScope.data.points.push({
+                _id: i,
+                c: Math.random(),
+                d: Math.random(),
+                e: Math.random()
+            });
+
+            let tempPoint = $rootScope.data.points[i];
+            tempPoint.b = (0.9*tempPoint.c) + (0.5*tempPoint.d);
+            tempPoint.a = (0.33*tempPoint.b) + (0.5*tempPoint.e);
+
+            // console.log($rootScope.data.points[i]);
+
+
+        }
+    }
+
+    $rootScope.toggle = true;
+    addPoint(20);
+
+
+})
+.controller('ExampleController', function($rootScope, $scope) {
+    this.data = $rootScope.data;
+    console.log('Generated Example Data: ', this.data);
+
+    
+});
+
+</script>
+
+<div ng-app="TemplateExample"
+    ng-controller="ExampleController as $ctrl"
+    class="template-example-container">
+
+    <template data="$ctrl.data"></template>
+</div>
+</body>
+</html>

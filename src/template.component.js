@@ -1,18 +1,18 @@
-/* @component swingweight */
+/* @component template */
 
-import controller from './swingweight.controller';
-import swingweightTemplate from './swingweight.html';
+import controller from './template.controller';
+import templateTemplate from './template.html';
 
 
-const SwingWeightComponent = {
+const TemplateComponent = {
 
     bindings: {
         data: '<'
     },
     controller,
-    templateUrl: swingweightTemplate
+    templateUrl: templateTemplate
 
 };
 
 
-export default SwingWeightComponent;
+export default TemplateComponent;

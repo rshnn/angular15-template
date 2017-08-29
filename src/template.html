@@ -1,40 +1,20 @@
-<div class="swingweight-container">
+<div class="template-tool-container">
 	
-	<div class="col">
-			<div class="row-xs-6">
-		 		where is this going to be
-				
-			</div>
-
-	</div>
-
+	inside the tool  
 
 	<div class="col">
         <div class="row-xs-6">
 
 			<ul class="req-block"
-				ng-repeat="req in $ctrl.data.requirements"
+				ng-repeat="req in $ctrl.data.dataframe.requirements.nodes"
 				ui-draggable="true"
 				> 
 
-				{{req.label}} {{req.name}}
+				{{req.node.label}} {{req.node.name}}
 				
 			</ul>
 
 		</div>	
 	</div>
-
-
-
-<!--     <div class="col-xs-6">
-        <ul ui-on-Drop="onDrop($event,$data,req)">
-            <li ui-draggable="true" drag="req" 
-            on-drop-success="dropSuccessHandler($event,$index,req)"
-            ng-repeat="req in data track by $index">
-                {{req}}
-            </li>
-        </ul>
-    </div> -->
-
 
 </div>

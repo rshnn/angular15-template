@@ -9,7 +9,7 @@ import angular from 'angular';
  */
 
 const components = angular
-    .module('swingweight.components', [
+    .module('template.components', [
 
     ])
     .name;

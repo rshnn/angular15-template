@@ -1,6 +1,6 @@
-/* @controller swingweight */
+/* @controller template */
 
-class SwingWeightController { 
+class TemplateController { 
 
     constructor(){}
 
@@ -10,16 +10,7 @@ class SwingWeightController {
     }
 
 
-    dropSuccessHandler($event, index, array){
-        array.slice(index+1);
-    }
-
-
-    onDrop($event, $data, array){
-        array.push($data);
-    }
-
 }
 
 
-export default SwingWeightController;
+export default TemplateController;

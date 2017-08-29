@@ -7,13 +7,13 @@ import ngAnimate from 'angular-animate';
 import ngDragDrop from 'angular-native-dragdrop';
 
 import Components from './components';
-import SwingWeightComponent from './template.component';
+import TemplateComponent from './template.component';
 
 
-angular.module('Template', [
+angular.module('TemplateTool', [
     ngMaterial,
     ngAnimate,
     ngDragDrop, 
     Components
 ])
-.component('template', TemplateComponent);
+.component('templateTool', TemplateComponent);

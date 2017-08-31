@@ -1,8 +1,8 @@
 {
-  "name": "template",
+  "name": "swing-weight",
   "version": "0.0.1",
   "description": "template for an angular 1.5 app.",
-  "main": "dist/template.bundle.js",
+  "main": "dist/swingweight.bundle.js",
   "scripts": {
     "build": "rimraf dist && webpack --config ./config/webpack.config.prod.babel.js",
     "watch": "rimraf dist && webpack --watch --config ./config/webpack.config.prod.babel.js",

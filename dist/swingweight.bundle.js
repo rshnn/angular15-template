@@ -45,7 +45,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(12);
+	module.exports = __webpack_require__(13);
 
 
 /***/ }),
@@ -56,30 +56,33 @@
 
 	__webpack_require__(2);
 
-	var _angular = __webpack_require__(6);
+	var _angular = __webpack_require__(5);
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _angularMaterial = __webpack_require__(7);
+	var _angularMaterial = __webpack_require__(6);
 
 	var _angularMaterial2 = _interopRequireDefault(_angularMaterial);
 
-	var _angularAnimate = __webpack_require__(8);
+	var _angularAnimate = __webpack_require__(7);
 
 	var _angularAnimate2 = _interopRequireDefault(_angularAnimate);
 
-	var _template = __webpack_require__(9);
+	var _angularNativeDragdrop = __webpack_require__(8);
 
-	var _template2 = _interopRequireDefault(_template);
+	var _angularNativeDragdrop2 = _interopRequireDefault(_angularNativeDragdrop);
+
+	var _components = __webpack_require__(9);
+
+	var _components2 = _interopRequireDefault(_components);
+
+	var _swingWeight = __webpack_require__(10);
+
+	var _swingWeight2 = _interopRequireDefault(_swingWeight);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_angular2.default.module('Template', [_angularMaterial2.default, _angularAnimate2.default]
-	// Components
-	).component('template', _template2.default);
-
-	// import Components from './components';
-	/* @module template */
+	_angular2.default.module('SwingWeight', [_angularMaterial2.default, _angularAnimate2.default, _angularNativeDragdrop2.default, _components2.default]).component('swingWeight', _swingWeight2.default); /* @module swing-weight */
 
 /***/ }),
 /* 2 */
@@ -88,10 +91,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(3);
+	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/postcss-loader/index.js!../../node_modules/sass-loader/index.js?outputStyle=expanded!./main.scss\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(4)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -108,77 +111,8 @@
 	}
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(4)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".req-block {\n  /*float: left;*/\n  min-width: 100px;\n  height: 100px;\n  border: 3px solid #000;\n  background: #BBB;\n  /*text stuff*/\n  text-align: center;\n  font-size: 24px;\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/sass/main.scss"],"names":[],"mappings":"AAAA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,cAAc;EACd,uBAAuB;EACvB,iBAAiB;EACjB,cAAc;EACd,mBAAmB;EACnB,gBAAgB;EAChB,gBAAgB;CACjB","file":"main.scss","sourcesContent":[".req-block {\n  /*float: left;*/\n  min-width: 100px;\n  height: 100px;\n  border: 3px solid #000;\n  background: #BBB;\n  /*text stuff*/\n  text-align: center;\n  font-size: 24px;\n  cursor: pointer;\n}\n"],"sourceRoot":"webpack://"}]);
-
-	// exports
-
-
-/***/ }),
+/* 3 */,
 /* 4 */
-/***/ (function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -430,22 +364,28 @@
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 	module.exports = require("angular");
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports) {
 
 	module.exports = require("angular-material");
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports) {
 
 	module.exports = require("angular-animate");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+	module.exports = require("angular-native-dragdrop");
 
 /***/ }),
 /* 9 */
@@ -454,35 +394,60 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
-	var _template = __webpack_require__(10);
+	var _angular = __webpack_require__(5);
 
-	var _template2 = _interopRequireDefault(_template);
-
-	var _template3 = __webpack_require__(11);
-
-	var _template4 = _interopRequireDefault(_template3);
+	var _angular2 = _interopRequireDefault(_angular);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/* @component template */
+	/**
+	 * The angular module for all stackedbar sub-components and services. 
+	 * @type {[type]}
+	 */
 
-	var TemplateComponent = {
+	var components = _angular2.default.module('swing-weight.components', []).name; /* @module components index.js */
+
+	exports.default = components;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _swingWeight = __webpack_require__(11);
+
+	var _swingWeight2 = _interopRequireDefault(_swingWeight);
+
+	var _swingWeight3 = __webpack_require__(12);
+
+	var _swingWeight4 = _interopRequireDefault(_swingWeight3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/* @component swing-weight */
+
+	var SwingWeightComponent = {
 
 	    bindings: {
 	        data: '<'
 	    },
-	    controller: _template2.default,
-	    templateUrl: _template4.default
+	    controller: _swingWeight2.default,
+	    templateUrl: _swingWeight4.default
 
 	};
 
-	exports.default = TemplateComponent;
+	exports.default = SwingWeightComponent;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -495,36 +460,36 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	/* @controller template */
+	/* @controller swing-weight */
 
-	var TemplateController = function () {
-	    function TemplateController() {
-	        _classCallCheck(this, TemplateController);
+	var SwingWeightController = function () {
+	    function SwingWeightController() {
+	        _classCallCheck(this, SwingWeightController);
 	    }
 
-	    _createClass(TemplateController, [{
+	    _createClass(SwingWeightController, [{
 	        key: "$onChanges",
 	        value: function $onChanges(changes) {
 	            console.log(changes);
 	        }
 	    }]);
 
-	    return TemplateController;
+	    return SwingWeightController;
 	}();
 
-	exports.default = TemplateController;
+	exports.default = SwingWeightController;
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
-	var path = 'C:/Users/roshan.r.patel/Documents/Development/ers/template-tool/src/template.html';
-	var html = "<div class=\"template-container\">\r\n\thi \r\n<!-- \t<div class=\"col\">\r\n\t\t\t<div class=\"row-xs-6\">\r\n\t\t \t\twhere is this going to be\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\r\n\t</div> -->\r\n\r\n\r\n<!-- \t<div class=\"col\">\r\n        <div class=\"row-xs-6\">\r\n\r\n\t\t\t<ul class=\"req-block\"\r\n\t\t\t\tng-repeat=\"req in $ctrl.data.dataframe.requirements.nodes\"\r\n\t\t\t\t> \r\n\r\n\t\t\t\t{{req.label}} {{req.name}}\r\n\t\t\t\t\r\n\t\t\t</ul>\r\n\r\n\t\t</div>\t\r\n\t</div> -->\r\n\r\n\r\n\r\n<!--     <div class=\"col-xs-6\">\r\n        <ul ui-on-Drop=\"onDrop($event,$data,req)\">\r\n            <li ui-draggable=\"true\" drag=\"req\" \r\n            on-drop-success=\"dropSuccessHandler($event,$index,req)\"\r\n            ng-repeat=\"req in data track by $index\">\r\n                {{req}}\r\n            </li>\r\n        </ul>\r\n    </div> -->\r\n\r\n\r\n</div>";
+	var path = 'C:/Users/roshan.r.patel/Documents/Development/ers/swing-weight/src/swing-weight.html';
+	var html = "<div class=\"swing-weight-container\">\n\t\n\tinside the tool  \n\n\t<div class=\"col\">\n        <div class=\"row-xs-6\">\n\n\t\t\t<ul class=\"req-block\"\n\t\t\t\tng-repeat=\"req in $ctrl.data.dataframe.requirements.nodes\"\n\t\t\t\tui-draggable=\"true\"\n\t\t\t\t> \n\n\t\t\t\t{{req.node.label}} {{req.node.name}}\n\t\t\t\t\n\t\t\t</ul>\n\n\t\t</div>\t\n\t</div>\n\n</div>";
 	window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 	module.exports = path;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 	module.exports = require("webpack-material-design-icons");

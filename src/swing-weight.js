@@ -1,4 +1,4 @@
-/* @module template */
+/* @module swing-weight */
 
 import './sass/main.scss';
 import angular from 'angular';
@@ -7,13 +7,13 @@ import ngAnimate from 'angular-animate';
 import ngDragDrop from 'angular-native-dragdrop';
 
 import Components from './components';
-import TemplateComponent from './template.component';
+import SwingWeightComponent from './swing-weight.component';
 
 
-angular.module('TemplateTool', [
+angular.module('SwingWeight', [
     ngMaterial,
     ngAnimate,
     ngDragDrop, 
     Components
 ])
-.component('templateTool', TemplateComponent);
+.component('swingWeight', SwingWeightComponent);

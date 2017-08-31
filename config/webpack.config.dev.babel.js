@@ -3,7 +3,7 @@ import autoprefixer from 'autoprefixer';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 // import nodeExternals from 'webpack-node-externals';
 
-const NAME = 'template';
+const NAME = 'swingweight';
 
 // App files location
 const PATHS = {
@@ -31,7 +31,7 @@ const DEV_PORT = 3000;
 
 module.exports = {
     entry: {
-        app: [PATHS.app + '/template.js', 'webpack-material-design-icons']
+        app: [PATHS.app + '/swing-weight.js', 'webpack-material-design-icons']
     },
     output: {
         path: PATHS.dist,

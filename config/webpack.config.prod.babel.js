@@ -2,7 +2,7 @@ import path from 'path';
 import autoprefixer from 'autoprefixer';
 import nodeExternals from 'webpack-node-externals';
 
-const NAME = 'template';
+const NAME = 'swingweight';
 
 // App files location
 const PATHS = {
@@ -21,7 +21,7 @@ const SASS_LOADERS = [
 
 module.exports = {
     entry: {
-        app: [PATHS.app + '/template.js', 'webpack-material-design-icons']
+        app: [PATHS.app + '/swing-weight.js', 'webpack-material-design-icons']
     },
     output: {
         path: PATHS.dist,

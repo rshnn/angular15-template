@@ -1,10 +1,11 @@
-# angular 1.5 template
+# swing weight matrix
 
-0.0.0
+0.0.1
 
 **versions**  
+0.0.1  |  swing weight matrix first iteration 
 0.0.0  |  bootstrapping angular app  
 
 
-Geared towards internal private project.  
+Drag and drop style tool for managing requirements weights.  
 

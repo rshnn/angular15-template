@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Template Ang15 Testing</title>
+    <title>Swing Weight Testing</title>
 
     <meta name="mobile-web-app-capable" content="yes">
     <style>
@@ -23,12 +23,12 @@
 
 <body>
 <script src="../node_modules/angular/angular.js"></script>
-<script src="template.bundle.js"></script>
+<script src="swingweight.bundle.js"></script>
 
 <script type="application/javascript">
     //Setups up fake data
 
-angular.module('TemplateExample', ['TemplateTool'])
+angular.module('SwingWeightExample', ['SwingWeight'])
     .run(function($rootScope, $timeout) {
     $rootScope.data = {};
 
@@ -402,11 +402,11 @@ angular.module('TemplateExample', ['TemplateTool'])
 
 </script>
 
-<div ng-app="TemplateExample"
+<div ng-app="SwingWeightExample"
     ng-controller="ExampleController as $ctrl"
-    class="template-example-container">
+    class="swing-weight-example-container">
 
-    <template-tool data="$ctrl.data"></template-tool>
+    <swing-weight data="$ctrl.data"></swing-weight>
 </div>
 </body>
 </html>
